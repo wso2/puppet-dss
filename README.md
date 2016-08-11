@@ -18,10 +18,10 @@ Follow the steps mentioned in the [wiki](https://github.com/wso2/puppet-base/wik
 
 Run the following commands to get wso2base submodule.
 
-    ````
-    git submodule init
-    git submodule update
-    ````
+````
+git submodule init
+git submodule update
+````
 
 ## Packs to be Copied
 
