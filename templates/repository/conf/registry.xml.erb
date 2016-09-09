@@ -31,7 +31,8 @@
         <dataSource><%= @master_datasources[@local_reg_datasource]['jndi_config'] %></dataSource>
     </dbConfig>
 
-<%- @registry_mounts.each do |datasource_name, registry_mount| -%>
+<% unless @registry_mounts.nil? -%>
+  <%- @registry_mounts.each do |datasource_name, registry_mount| -%>
     <dbConfig name="<%= @master_datasources[datasource_name]['name'] %>">
         <dataSource><%= @master_datasources[datasource_name]['jndi_config'] %></dataSource>
     </dbConfig>
@@ -47,7 +48,8 @@
         <instanceId><%= @master_datasources[datasource_name]['name'] %></instanceId>
         <targetPath><%= registry_mount['target_path'] %></targetPath>
     </mount>
-<%- end -%>
+  <%- end -%>
+<% end -%>
   
     <indexingConfiguration>
         <startIndexing>true</startIndexing>
