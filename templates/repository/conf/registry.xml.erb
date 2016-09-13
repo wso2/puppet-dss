@@ -31,7 +31,7 @@
         <dataSource><%= @master_datasources[@local_reg_datasource]['jndi_config'] %></dataSource>
     </dbConfig>
 
-<% unless @registry_mounts.nil? -%>
+<% if @registry_mounts and !@registry_mounts.empty? -%>
   <%- @registry_mounts.each do |datasource_name, registry_mount| -%>
     <dbConfig name="<%= @master_datasources[datasource_name]['name'] %>">
         <dataSource><%= @master_datasources[datasource_name]['jndi_config'] %></dataSource>

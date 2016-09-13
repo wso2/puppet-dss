@@ -73,6 +73,23 @@ class wso2dss (
 
   validate_string($taskServerCount)
 
+  validate_hash($master_datasources)
+  if $registry_mounts != undef {
+    validate_hash($registry_mounts)
+  }
+  validate_string($hostname)
+  validate_string($mgt_hostname)
+  validate_bool($worker_node)
+  validate_string($usermgt_datasource)
+  validate_string($local_reg_datasource)
+  validate_hash($clustering)
+  validate_hash($dep_sync)
+  validate_hash($ports)
+  validate_hash($jvm)
+  validate_string($fqdn)
+  validate_hash($sso_authentication)
+  validate_hash($user_management)
+
   class { '::wso2base':
     packages               => $packages,
     template_list          => $template_list,
